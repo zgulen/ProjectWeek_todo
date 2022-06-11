@@ -9,7 +9,9 @@ let todos =JSON.parse(localStorage.getItem("todos"));
 
 renderSavedTodos();
 function renderSavedTodos(){
-    console.log(todos)
+    todos.forEach((todo) => {
+        
+    });
 }
 
 window.onload = function () {
