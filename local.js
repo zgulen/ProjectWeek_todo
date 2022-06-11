@@ -5,12 +5,18 @@ const btn = document.getElementById('todo-button');
 const todoInput = document.getElementById('todo-input');
 const todoUl = document.getElementById('todo-ul');
 
-let todos =JSON.parse(localStorage.getItem("todos"));
+let todos = JSON.parse(localStorage.getItem("todos")) || [];
 
 renderSavedTodos();
 function renderSavedTodos(){
     todos.forEach((todo) => {
-        
+        const {id , isDown, content} = todo
+        todoUl.innerHTML += `
+    <li>
+      <i class="fa fa-check"></i>
+      <p>${content}</p>
+      <i class="fa fa-trash"></i>
+    </li>`;
     });
 }
 
